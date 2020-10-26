@@ -6,14 +6,12 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-// Express app configurations
 app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// handles all routes (404 pages are handled in client/src/index.js by React)
 app.get('/', (req, res) => {
     res.status(200).sendFile('index.html', {
         root: path.resolve('public')
