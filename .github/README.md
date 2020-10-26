@@ -19,7 +19,7 @@ $ git clone https://github.com/timburr1/yelpForAnything.git
 sudo snap install node --classic --channel=12
 ```
 
-## Setup Your Database
+## Setup your database
 Open MySQL Workbench from your start menu, or run the MySQL CLI with:
 ```bash
 $ sudo mysql
@@ -35,7 +35,7 @@ GRANT USAGE ON *.* TO sqluser@localhost;
 GRANT ALL PRIVILEGES ON yelp.* TO sqluser@localhost;
 ```
 
-## Project Dependencies
+## Project dependencies
 Open this project in Visual Studio Code. Open a new Terminal from the menu, or use Ctrl+Shift+`  
 Install dependencies:
 ```bash
