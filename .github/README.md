@@ -2,13 +2,12 @@
 ![](https://img.shields.io/github/repo-size/timburr1/yelpForAnything)
 ![](https://img.shields.io/github/contributors/timburr1/yelpForAnything)
 ![](https://img.shields.io/github/last-commit/timburr1/yelpForAnything)
-<br>Simple web page built with JavaScript, Sequelize, and MySql
+<br>Simple ratings web page, built with MySQL and Node.js.
 
 ## Prerequisites
 * [**MySQL**](https://www.mysql.com/downloads/) and [**Workbench**](https://www.linuxhelp.com/how-to-install-mysql-workbench-on-linux-mint-18-03)
-* [**NPM**](https://www.npmjs.com/get-npm)
 * [**Node.js**](https://nodejs.org/en/download/package-manager/)
-* [**Sequelize**](https://sequelize.readthedocs.io/en/v3/docs/getting-started/)
+* [**NPM**](https://www.npmjs.com/get-npm) (Installed automatically with Node.js)
 
 ## Checkout this project
 ```bash
