@@ -15,6 +15,11 @@
 $ git clone https://github.com/timburr1/yelpForAnything.git
 ```
 
+## Install Node.js and NPM
+```bash
+sudo snap install node --classic --channel=12
+```
+
 ## Setup Your Database
 Open MySQL Workbench from your start menu, or run the MySQL CLI with:
 ```bash
