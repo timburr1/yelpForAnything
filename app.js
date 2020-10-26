@@ -1,31 +1,31 @@
-const http = require('http');
-const url = require('url');  
-const fs = require('fs');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 const path = require('path');
 
-const hostname = '127.0.0.1';
+const app = express();
 const port = 3000;
 
-const server = http.createServer((request, response) => {
-    var urlPath = url.parse(request.url).pathname;  
-    if ('/' === urlPath)
-    urlPath = '/index.html';
+// Express app configurations
+app.use(cors());
+app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-    fs.readFile(path.join(__dirname + urlPath), function(error, data) {  
-        if (error) {  
-            response.writeHead(404);  
-            response.write(error);  
-            response.end();  
-        } else {  
-            response.writeHead(200, {  
-                    'Content-Type': 'text/html'  
-                });  
-            response.write(data);  
-            response.end();  
-        }  
-    });    
-});  
+// handles all routes (404 pages are handled in client/src/index.js by React)
+app.get('/', (req, res) => {
+    res.status(200).sendFile('index.html', {
+        root: path.resolve('public')
+    });
+});
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.get('/admin', (req, res)  => {
+    res.status(200).sendFile('admin.html', {
+        root: path.resolve('public')
+    });
+})
+
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
 });

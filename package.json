@@ -4,6 +4,9 @@
   "description": "Simple web site for Database Design & Programming students",
   "main": "app.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "mysql": "^2.18.1",
     "sequelize": "^6.3.5"
   },
