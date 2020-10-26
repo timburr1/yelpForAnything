@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Yelp for Anything!</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<nav>
+			<ul>
+            	<li><a href="index.html">Home</a></li>
+				<li><a href="admin.html">Admin</a></li>
+			</ul>
+		</nav>
+		
+		<h1>Yelp for Anything!</h1>
+		
+		<div id="food-picture">
+			<div id="banner-text">
+			What are you rating today? <input id="ratee" type="text" accept-charset="UTF-8" /><br>
+			How many stars, out of five? <input id="stars" type="range" min="0" max="5" /> 
+			<b>TODO: can you display the star value here?</b>
+			<br>
+			Comments? <input id="comments" type="text" size="100" accept-charset="UTF-8" />
+			<button type="button" onclick="submitRating()">Submit</button>
+			</div>
+		</div>
+		
+		<h3>TODO: ^This div looks heinous, see if you can make it nicer</h3>
+		
+		<div id="ratings-div">
+			<p id="ratings"></p>
+		</div>
+		
+		<footer>Go Patriots!</footer>
+	</body>
+</html>
