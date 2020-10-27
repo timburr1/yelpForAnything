@@ -37,6 +37,7 @@ app.get('/insertRating', (request, response)  => {
 })
 
 app.get('/getRatings', (request, response)  => {
+    //TODO: connect to the database, select all ratings, and return them in an HTML table or similar
     response.status(200).send( 'This is just a test, not real ratings. Sorry.' );
 })
 
