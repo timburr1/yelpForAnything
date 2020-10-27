@@ -42,34 +42,3 @@ app.get('/getRatings', (request, response)  => {
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
 });
-
-
-/** DAO stuff: */
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "sqluser",
-  password: "sqluserpw",
-  database: "yelp"
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-
-  var createTable = "CREATE TABLE IF NOT EXISTS rating (ratee VARCHAR(256), stars TINYINT, comment VARCHAR(1024));";
-  con.query(createTable, function (err, result) {
-    if (err) throw err;
-    console.log("Table created");
-  });
-});
-
-function insertRating(ratee, stars, comment) {
-    //console.log("Writing ratee: " + ratee + ", stars: " + stars + ", comment: " + comment);
-    var query = con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "');",
-    function (err, result) {
-        if (err) throw err;
-        console.log("1 record inserted");
-    });
-};
