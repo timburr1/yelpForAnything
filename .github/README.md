@@ -31,6 +31,7 @@ use yelp;
 ```
 Grant your existing sqluser permissions on that schema:
 ```sql
+ALTER USER 'sqluser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'sqluserpw';
 GRANT USAGE ON *.* TO sqluser@localhost;
 GRANT ALL PRIVILEGES ON yelp.* TO sqluser@localhost;
 ```
