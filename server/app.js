@@ -28,7 +28,7 @@ app.get('/insertRating', (request, response)  => {
     
     var ratee = request.query.ratee;
     var stars = request.query.stars;
-    var comment = request.url.comment;
+    var comment = request.query.comment;
     
     insertRating(ratee, stars, comment);
 
@@ -66,7 +66,8 @@ con.connect(function(err) {
 });
 
 function insertRating(ratee, stars, comment) {
-    var query = con.query("INSERT INTO rating VALUES (" + con.escape(ratee) + ", " + stars + ", " + con.escape(comment) + ");",
+    //console.log("Writing ratee: " + ratee + ", stars: " + stars + ", comment: " + comment);
+    var query = con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "');",
     function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
