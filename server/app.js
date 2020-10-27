@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const dao = require('./dao.js');
 
 const app = express();
 const port = 3000;
@@ -22,6 +23,22 @@ app.get('/admin', (req, res)  => {
     res.status(200).sendFile('admin.html', {
         root: path.resolve('../public')
     });
+})
+
+app.get('/insertRating', (request, response)  => {
+    
+    var ratee = request.query.ratee;
+    var stars = request.query.stars;
+    var comment = request.url.comment;
+    
+    dao.insertRating(ratee, stars, comment);
+
+    response.status(200).send( {});
+})
+
+app.get('/getRatings', (request, response)  => {
+    // TODO
+    response.status(200).send( {});
 })
 
 app.listen(port, () => {

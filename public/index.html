@@ -14,6 +14,29 @@
 			</ul>
 		</nav>
 		
+		<script> <!-- TODO: fix XMLHttpRequests -->
+			function insertRating(){
+				var ratee = document.getElementById("ratee").value;
+				var stars = document.getElementById("stars").value;
+				var comment = document.getElementById("comment").value;
+
+				var xmlhttp = new XMLHttpRequest();
+   				xmlhttp.open("GET","http://localhost:3000/insertRating?ratee=" + ratee + "&stars=" + stars + "&comment=" + comment, true);
+   				xmlhttp.send();
+   			}
+			
+			function getAllRatings(){
+				var xmlhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+        			if (this.readyState == 4 && this.status == 200) {
+            			document.getElementById("ratings-div").innerHTML = this.responseText;
+       				}
+    			};
+				xmlhttp.open("GET","http://localhost:3000/getRatings", true);
+				xmlhttp.send();
+   			}
+		</script>
+
 		<h1>Yelp for Anything!</h1>
 		
 		<div id="food-picture">
@@ -23,14 +46,16 @@
 			<b>TODO: can you display the star value here?</b>
 			<br>
 			Comments? <input id="comments" type="text" size="100" accept-charset="UTF-8" />
-			<button type="button" onclick="submitRating()">Submit</button>
+			<button type="button" onclick="insertRating()">Submit</button>
 			</div>
 		</div>
 		
 		<h3>TODO: ^This div looks heinous, see if you can make it nicer</h3>
 		
+		<h3>TODO: Can you update ratings-div automatically, without using the button?</h3>
+
+		<button type="button" onclick="getAllRatings()">Get Ratings</button>
 		<div id="ratings-div">
-			<p id="ratings"></p>
 		</div>
 		
 		<footer>Go Patriots!</footer>
