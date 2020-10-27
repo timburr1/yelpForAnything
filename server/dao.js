@@ -18,10 +18,16 @@ con.connect(function(err) {
   });
 });
 
-function insertRating(ratee, stars, comment) {
-    var query = con.query("INSERT INTO rating VALUES (" + con.escape(ratee) + ", " + stars + ", " + con.escape(comment) + ");",
+module.exports = {
+  insertRating: function (ratee, stars, comment) {
+    var query = con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "');",
     function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
-    });
+    });    
+  },
+
+  deleteRating: function (ratee, stars, comment) {
+    //TODO
+  }
 };
