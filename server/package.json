@@ -21,9 +21,7 @@
   },
   "keywords": [
     "MySQL",
-    "NPM",
-    "Sequelize",
-    "JavaScript"
+    "Node.js"
   ],
   "author": "Tim Burr",
   "license": "ISC",

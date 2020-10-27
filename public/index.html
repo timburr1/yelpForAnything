@@ -14,26 +14,31 @@
 			</ul>
 		</nav>
 		
-		<script> <!-- TODO: fix XMLHttpRequests -->
+		<script type="text/javascript"> 
 			function insertRating(){
 				var ratee = document.getElementById("ratee").value;
 				var stars = document.getElementById("stars").value;
 				var comment = document.getElementById("comment").value;
 
-				var xmlhttp = new XMLHttpRequest();
-   				xmlhttp.open("GET","http://localhost:3000/insertRating?ratee=" + ratee + "&stars=" + stars + "&comment=" + comment, true);
-   				xmlhttp.send();
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET","http://localhost:3000/insertRating?ratee=" + ratee + "&stars=" + stars + "&comment=" + comment, true);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+				xhr.send();
    			}
 			
 			function getAllRatings(){
-				var xmlhttp = new XMLHttpRequest();
-				xhttp.onreadystatechange = function() {
-        			if (this.readyState == 4 && this.status == 200) {
+				var xhr = new XMLHttpRequest();			
+				
+				xhr.open("GET","http://localhost:3000/getRatings", true);
+				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+				xhr.onreadystatechange = function() {
+        			if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
             			document.getElementById("ratings-div").innerHTML = this.responseText;
        				}
-    			};
-				xmlhttp.open("GET","http://localhost:3000/getRatings", true);
-				xmlhttp.send();
+				};
+				
+				xhr.send();
    			}
 		</script>
 
@@ -45,7 +50,7 @@
 			How many stars, out of five? <input id="stars" type="range" min="0" max="5" /> 
 			<b>TODO: can you display the star value here?</b>
 			<br>
-			Comments? <input id="comments" type="text" size="100" accept-charset="UTF-8" />
+			Comments? <input id="comment" type="text" size="100" accept-charset="UTF-8" />
 			<button type="button" onclick="insertRating()">Submit</button>
 			</div>
 		</div>
