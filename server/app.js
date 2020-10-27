@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
+const dao = require('./dao.js');
 
 const app = express();
 const port = 3000;
@@ -30,7 +31,7 @@ app.get('/insertRating', (request, response)  => {
     var stars = request.query.stars;
     var comment = request.query.comment;
     
-    insertRating(ratee, stars, comment);
+    dao.insertRating(ratee, stars, comment);
 
     response.status(200).send( {});
 })

@@ -20,7 +20,8 @@ con.connect(function(err) {
 
 module.exports = {
   insertRating: function (ratee, stars, comment) {
-    var query = con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "');",
+    //con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "')",
+    con.query("INSERT INTO rating VALUES ( ? )", [[ratee, stars, comment]], 
     function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
