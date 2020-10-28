@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<title>Yelp for Anything!</title>
+		<title>Whelp...</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<nav>
 			<ul>
+				<h1>Whelp.com</h1>
             	<li><a href="/">Home</a></li>
 				<li><a href="/admin">Admin</a></li>
 			</ul>
@@ -41,28 +43,19 @@
 				xhr.send();
    			}
 		</script>
-
-		<h1>Yelp for Anything!</h1>
 		
 		<div id="food-picture">
 			<div id="banner-text">
-			What are you rating today? <input id="ratee" type="text" accept-charset="UTF-8" /><br>
-			How many stars, out of five? <input id="stars" type="range" min="0" max="5" /> 
-			<b>TODO: can you display the star value here?</b>
-			<br>
-			Comments? <input id="comment" type="text" size="100" accept-charset="UTF-8" />
-			<button type="button" onclick="insertRating()">Submit</button>
+			What are you rating today? <input id="ratee" type="text" accept-charset="UTF-8" /><br><br>
+			How many stars, out of five? <input id="stars" type="range" min="0" max="5" /><br><br>
+			Comments? <textarea id="comment" type="text" size="100" accept-charset="UTF-8"></textarea><br><br>
+			<button type="button" onclick="insertRating()">Submit</button><br><br>
+			<button type="button" onclick="getAllRatings()">Get Ratings</button>
+			<div id="ratings-div">
 			</div>
 		</div>
-		
-		<h3>TODO: ^This div looks heinous, see if you can make it nicer</h3>
-		
-		<h3>TODO: Can you update ratings-div automatically, without using the button?</h3>
-
-		<button type="button" onclick="getAllRatings()">Get Ratings</button>
-		<div id="ratings-div">
 		</div>
-		
-		<footer>Go Patriots!</footer>
+		<br><br>
+		<footer>This site is better than real Yelp. Don't sue me or i'll sue you first 0w0.<br><br><a href="privacy.html">Privacy Policy</a></footer>
 	</body>
 </html>
