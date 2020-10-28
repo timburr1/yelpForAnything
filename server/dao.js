@@ -19,16 +19,19 @@ con.connect(function(err) {
 });
 
 module.exports = {
+  deleteRating: function (ratee, stars, comment) {
+    //TODO
+  },
+  
+  getAllRatings: function() {
+    //TODO
+  },
+  
   insertRating: function (ratee, stars, comment) {
-    //con.query("INSERT INTO rating VALUES ('" + ratee + "', " + stars + ", '" + comment + "')",
     con.query("INSERT INTO rating VALUES ( ? )", [[ratee, stars, comment]], 
     function (err, result) {
         if (err) throw err;
         console.log("1 record inserted");
     });    
-  },
-
-  deleteRating: function (ratee, stars, comment) {
-    //TODO
   }
 };
