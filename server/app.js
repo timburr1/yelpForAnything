@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
-const dao = require('./dao.js');
+//const dao = require('./mysqlDao.js');
+const dao = require('./sqliteDao.js');
 
 const app = express();
 const port = 3000;
