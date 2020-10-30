@@ -24,7 +24,17 @@ module.exports = {
   },
   
   getAllRatings: function() {
-    //TODO
+    con.query("SELECT ratee, stars, comment FROM rating;", 
+    function (err, result, fields) {
+        if (err) throw err;
+
+      // TODO: This for loop will print your resultSet to the console.\
+      // Instead, could you put them into a single string, and return that, 
+      // so that the route handler can pass it back to your browser?       
+        for(var n=0; n < result.length; n++) {
+          console.log(result[n]);
+        }
+    });  
   },
   
   insertRating: function (ratee, stars, comment) {
