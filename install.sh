@@ -1,3 +1,3 @@
-printf "Installing Dependencies... "
+printf "Installing Dependencies ... "
 cd server
 npm install
