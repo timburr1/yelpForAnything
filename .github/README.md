@@ -40,11 +40,10 @@ GRANT ALL PRIVILEGES ON yelp.* TO sqluser@localhost;
 Open this project in Visual Studio Code. Open a new Terminal from the menu, or use Ctrl+Shift+`  
 Install dependencies:
 ```bash
-> cd server
-> npm install
+$ sh install.sh
 ```
 Run the web server with 
 ```
-> npm run start
+$ sh start.sh
 ```
 Open a web browser, and navigate to [localhost:3000](http://localhost:3000/).
